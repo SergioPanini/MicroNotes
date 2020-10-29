@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<style>
+    .note{
+        box-shadow: 0 0 2px darkgrey;
+        border: 1px groove grey;
+        border-radius: 2px;
+        padding: 10px;
+        height: 100%;
+        }
+    .col-4-note{
+        margin-bottom: 10px;
+    }
+    .note:hover{
+        box-shadow: 0 0 6px tomato;
+        border: 1px groove tomato;
+    }
+    .red-button-create-note{
+        background-color:tomato ;
+        text-align: center;
+    }
+    .col h3{
+        color: tomato;
+    }
+    input, form{
+        width: 100%;
+        border-radius: 10px;
+        border-color: #fff;
+        color: #fff;
+        
+    }
+    .margin-up{
+        margin-top: 20px;
+    }
+</style>
+
+
+<div class="conteiner">
+    <div class="row row-button-create-notes">
+        <div class="col"><h3>MicroNotes</h3></div>
+        <div class="col-7 red-button-create-note"><h2>Create Note+</h2></div>
+        <div class="col"></div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            
+        </div>
+        <div class="col-6">
+            
+            {% block content %}
+            {% endblock content %}
+
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    </div>
+</body>
+</html>

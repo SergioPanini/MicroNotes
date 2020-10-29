@@ -1,0 +1,29 @@
+ {% extends "base.html" %}
+
+ {% block content %}
+<div class="col">
+<div class="row margin-up">
+        <div class="col">
+            <h2>Notes</h2>
+        </div>
+    </div>
+    <div class="row margin-up">
+        <div class="col">
+            <form>
+                <input type="text">
+                </form>
+        </div>        
+    </div>
+    
+<div class="row margin-up">
+{% for note in notes %}
+<div class="col-4 col-4-note">
+    <div class="note">
+    <h4> {{note.title}}</h1>
+    <p>{{ note.preview_text }}</p>
+    </div>
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock content %}
