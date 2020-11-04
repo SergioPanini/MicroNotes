@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+<style>
+    #findNote{
+        width:100%;
+    }
+    .note{
+        box-shadow: 0 0 2px darkgrey;
+        border: 1px groove grey;
+        border-radius: 2px;
+        padding: 10px;
+        margin-bottom: 15px;
+        }
+    .note:hover{
+        box-shadow: 0 0 6px tomato;
+        border: 1px groove tomato;
+    }
+</style>
+<div class="conteiner">
+    <div class="row">
+        <div class="col-3">
+MicroNotes
+        </div>
+        <div class="col-6">
+            <form >
+                <input id=findNote type="text">
+            </form>
+        </div>
+        <div class="col-3">
+            <form>
+                <input type="button" value="Create Note">
+            </form>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-3">
+    menu
+    </div>
+    <div class="col-6">
+        <div class="row">
+    {% block content %}
+
+    {% endblock content %}
+</div>
+    </div>
+    <div class="col-3">
+left menu
+    </div>
+</div>
+<div class="row">
+
+</div>
+</div>
+<body>
+</html>

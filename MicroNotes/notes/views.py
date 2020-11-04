@@ -51,10 +51,16 @@ def signout(request):
     return HttpResponse('done')
 
 def test(request):
-    if request.user.is_authenticated:
-        return HttpResponse(' aut aut')
-    else:
-        return HttpResponse('not not')
+    if request.user.is_authenticated == False:
+        return render(request, 'authorization_false.html')
+    
+    notes = Note.objects.filter(owner=request.user).values()
+    print(notes)
+    index = []
+    N = 3
+    for i in range(len(notes)):
+        index.append(i % N)
+    return render(request, "main_test.html", {"notes": notes, 'index':index})
 
 def create_note(request):
     if request.user.is_authenticated == False:
@@ -63,6 +69,7 @@ def create_note(request):
     if request.method == 'POST':
         title = request.POST['title']
         text = request.POST['text']
+        preview_text = text
         if len(request.POST['text']) > 150:
             preview_text=text[:147] + '...'
         new_note = Note.objects.create(owner=request.user, title=title, text=text, preview_text=preview_text)
